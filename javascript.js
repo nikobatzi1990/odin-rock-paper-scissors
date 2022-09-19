@@ -33,7 +33,10 @@ function playRound (playerSelection, computerSelection) {
 }
 
 function game () {
-
-// my code here
-
+    
+    for (let i = 0; i < 5; i++) {
+        playRound();
+     }
 }
+
+game();
