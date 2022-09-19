@@ -14,9 +14,9 @@ function getComputerChoice() {
 }
 
 function playRound (playerSelection, computerSelection) {
-    //console.log(playerSelection.toLowerCase());
-    //console.log(computerSelection);
-    
+
+    playerSelection = prompt("Choose rock, paper, or scissors!");
+
     if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
         return "You win! Rock beats Scissors!";
     } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper") {
@@ -32,4 +32,8 @@ function playRound (playerSelection, computerSelection) {
     } else return "It's a draw!";
 }
 
-console.log(playRound("RoCk", getComputerChoice()));
+function game () {
+
+// my code here
+
+}
