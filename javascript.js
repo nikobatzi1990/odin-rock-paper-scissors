@@ -42,7 +42,7 @@ function game () {
     
     for (let i = 0; i < 5; i++) {
         let result = playRound();
-        //console.log(result);
+        console.log(result);
         
         if (result.includes("win")) {
             playerScore += 1;
@@ -59,11 +59,12 @@ function game () {
             console.log("computer score: ", computerScore)
         }
     }
-    if (playerScore > computerScore) {
+
+    if (playerScore > computerScore === true) {
         return "You win!"
-    } else if (computerScore > playerScore) {
+    } else if (computerScore > playerScore === true) {
         return "You lose!"
     }
 }
 
-game();
+console.log(game());
