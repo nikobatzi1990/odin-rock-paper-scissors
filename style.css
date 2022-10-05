@@ -2,14 +2,26 @@ body {
     background-color: #FFD1FC;
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 #header {
     font-size: 80px;
     font-family: 'Glamper';
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 8px;
+}
+
+.subheader {
+    font-size: 30px;
+    font-family: 'Glamper';
+}
+
+p {
+    margin: 1px;
 }
 
 #buttons {
