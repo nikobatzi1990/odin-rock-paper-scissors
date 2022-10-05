@@ -1,5 +1,5 @@
 body {
-    background-color: #FFD1FC;
+    background-color: #40E0D0;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -33,14 +33,32 @@ p {
 }
 
 .button {
-    background-color: #ACFFF7;
+    background-color: #FFC300;
     padding: 20px;
-    border: 2px solid #ACFFF7;
-    box-shadow: -3px 3px #40E0D0, -2px 2px #40E0D0, -1px 1px #40E0D0;
+    border: 2px solid #FFC300;
+    box-shadow: -3px 3px #FF5733, -2px 2px #FF5733, -1px 1px #FF5733;
     border-radius: 10px;
 }
 
 img {
     height: 100px;
     width: 100px;
+}
+
+#scoreboard {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score {
+    margin: 15px;
+    padding: 10px;
+    background-color: #FFC300;
+    font-size: 50px;
+    font-family: 'Glamper';
+    border: 2px solid #FFC300;
+    box-shadow: -3px 3px #FF5733, -2px 2px #FF5733, -1px 1px #FF5733;
+    border-radius: 10px;
 }
