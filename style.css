@@ -1,22 +1,30 @@
+body {
+    background-color: #FFD1FC;
+    display: flex;
+    flex-direction: column;
+}
+
 #header {
     font-size: 80px;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Glamper';
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #buttons {
-    margin: 10px;
+    margin: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 20px;
 }
 
 .button {
+    background-color: #ACFFF7;
     padding: 20px;
-    border: 5px solid;
+    border: 2px solid #ACFFF7;
+    box-shadow: -3px 3px #40E0D0, -2px 2px #40E0D0, -1px 1px #40E0D0;
     border-radius: 10px;
 }
 
