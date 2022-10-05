@@ -1,1 +1,17 @@
+#buttons {
 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button {
+    padding: 50px;
+    border: 5px solid;
+    border-radius: 10px;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}

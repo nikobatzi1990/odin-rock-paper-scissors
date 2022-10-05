@@ -15,7 +15,7 @@ function getComputerChoice() {
 
 function playRound (playerSelection, computerSelection) {
 
-    playerSelection = prompt("Choose rock, paper, or scissors!");
+    //playerSelection = prompt("Choose rock, paper, or scissors!");
     computerSelection = getComputerChoice();
 
     if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
