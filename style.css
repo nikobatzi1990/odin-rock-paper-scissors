@@ -1,12 +1,21 @@
-#buttons {
-
+#header {
+    font-size: 80px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
+#buttons {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
 .button {
-    padding: 50px;
+    padding: 20px;
     border: 5px solid;
     border-radius: 10px;
 }
