@@ -10,11 +10,10 @@ function getComputerChoice() {
     } else if (random === 3) {
         return "scissors";
     }
-    
 }
 
 function getPlayerSelection() {
-
+    let choice = '';
     let buttons = document.getElementsByClassName('button');
     //console.log(buttons);
     for(i = 0; i < buttons.length; i++) {
@@ -22,76 +21,18 @@ function getPlayerSelection() {
         //console.log(button);
         
         button.addEventListener('click', () => {
-            let result;
-
-            if (button.id === 'rock') {
-                result = 'rock';
-                //console.log(result);
-            } else if (button.id === 'paper') {
-                result = 'paper';
-            } else if (button.id === 'scissors') {
-                result = 'scissors';
-            }
-            return result;
+            choice = button.id;
+            console.log(choice);
         });
     }
+    return choice;
 }
 
 console.log(getPlayerSelection());
 
-// code for a single round of game
-
-function playRound (playerSelection, computerSelection) {
-    playerSelection = getPlayerSelection();
-    computerSelection = getComputerChoice();
-
-    if (playerSelection === "rock" && computerSelection === "scissors") {
-        return "You win this round! Rock beats Scissors!";
-    } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper") {
-        return "You lose this round! Paper beats Rock!"
-    } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
-        return "You win this round! Paper beats Rock!";
-    } else if (playerSelection.toLowerCase() === "paper" && computerSelection === "scissors") {
-        return "You lose this round! Scissors beats Paper!";
-    } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
-        return "You win this round! Scissors beats Paper!"
-    } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
-        return "You lose this round! Rock beats Scissors!"
-    } else return "It's a draw! No points!";
+function playRound () {
+    let computerSelection = getComputerChoice();
+    let playerSelection = getPlayerSelection();
 }
 
-//console.log(playRound());
-
-function game () {
-
-    let playerScore = 0;
-    let computerScore = 0;
-    
-    for (let i = 0; i < 9; i++) {
-        let result = playRound();
-        console.log(result);
-        
-        if (result.includes("win")) {
-            playerScore += 1;
-            console.log("player score: ", playerScore);
-            console.log("computer score: ", computerScore)
-        
-        } else if (result.includes("lose")) {
-            computerScore += 1;
-            console.log("player score: ", playerScore);
-            console.log("computer score: ", computerScore)
-        
-        } else if (result.includes("draw")) {
-            console.log("player score: ", playerScore);
-            console.log("computer score: ", computerScore)
-        }
-    }
-
-    if (playerScore > computerScore === true) {
-        return "You win!"
-    } else if (computerScore > playerScore === true) {
-        return "You lose!"
-    }
-}
-
-//console.log(game());
+playRound();
