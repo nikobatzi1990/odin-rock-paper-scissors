@@ -1,5 +1,3 @@
-// code for getting computer's choice
-
 function getComputerChoice() {
     let random = Math.floor(Math.random() * 3 + 1);
     //console.log(random);
@@ -22,7 +20,7 @@ function getPlayerSelection() {
         
         button.addEventListener('click', () => {
             choice = button.id;
-            console.log(choice);
+            //console.log(choice);
         });
     }
     return choice;
@@ -31,8 +29,29 @@ function getPlayerSelection() {
 console.log(getPlayerSelection());
 
 function playRound () {
-    let computerSelection = getComputerChoice();
     let playerSelection = getPlayerSelection();
+    let result;
+    let computerSelection = getComputerChoice();
+    
+
+    if (playerSelection === 'rock' && computerSelection === 'scissors') {
+        result = 'win';
+    } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+        result = 'loss';
+    } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+        result = 'win';
+    } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+        result = 'loss';
+    } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+        result = 'win';
+    } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+        result = 'loss';
+    } else if (playerSelection === computerSelection) {
+        result = 'draw';
+    }
+    console.log('computer: ', computerSelection);
+    console.log('player', playerSelection);
+    return result;
 }
 
-playRound();
+console.log(playRound());
