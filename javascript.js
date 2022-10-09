@@ -1,6 +1,22 @@
 let playerScore = 0;
 let computerScore = 0;
 
+let rock = document.getElementById('rock');
+let paper = document.getElementById('paper');
+let scissors = document.getElementById('scissors');
+let playerDisplay = document.getElementById('player');
+let computerDisplay = document.getElementById('computer');
+
+// Game result pop-ups
+
+let winPopup = document.createElement('div');
+winPopup.classList.add('popup');
+winPopup.innerText = 'You win!';
+
+let losePopup = document.createElement('div');
+losePopup.classList.add('popup');
+losePopup.innerText = 'You lose!'
+
 function getComputerChoice() {
     let random = Math.floor(Math.random() * 3 + 1);
     //console.log(random);
@@ -13,11 +29,7 @@ function getComputerChoice() {
     }
 }
 
-let rock = document.getElementById('rock');
-let paper = document.getElementById('paper');
-let scissors = document.getElementById('scissors');
-let playerDisplay = document.getElementById('player');
-let computerDisplay = document.getElementById('computer');
+// Functions
 
 function playGame() {
 
@@ -39,9 +51,9 @@ function playGame() {
             }
 
         } else if (playerScore === 5) {
-            alert('win');
+            document.body.appendChild(winPopup);
         } else if (computerScore === 5) {
-            alert('lose');
+            document.body.appendChild(losePopup);
         }
     });
 
@@ -60,9 +72,9 @@ function playGame() {
                 console.log('draw');   
             }
         } else if (playerScore === 5) {
-            alert('win');
+            document.body.appendChild(winPopup);
         } else if (computerScore === 5) {
-            alert('lose');
+            document.body.appendChild(losePopup);
         }
     });
 
@@ -81,9 +93,9 @@ function playGame() {
                 console.log('draw');
             }
         } else if (playerScore === 5) {
-            alert('win');
+            document.body.appendChild(winPopup);
         } else if (computerScore === 5) {
-            alert('lose');
+            document.body.appendChild(losePopup);
         }
     });
 }
