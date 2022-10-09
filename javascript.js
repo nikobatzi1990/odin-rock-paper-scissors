@@ -10,48 +10,45 @@ function getComputerChoice() {
     }
 }
 
-function getPlayerSelection() {
-    let choice = '';
-    let buttons = document.getElementsByClassName('button');
-    //console.log(buttons);
-    for(i = 0; i < buttons.length; i++) {
-        let button = buttons[i];
-        //console.log(button);
-        
-        button.addEventListener('click', () => {
-            choice = button.id;
-            //console.log(choice);
-        });
-    }
-    return choice;
-}
+let rock = document.getElementById('rock');
+let paper = document.getElementById('paper');
+let scissors = document.getElementById('scissors');
 
-console.log(getPlayerSelection());
+rock.addEventListener('click', function () {
+    console.log(rock.id)
+    return rock.id;
+});
+
+paper.addEventListener('click', function () {
+    console.log(paper.id);
+    return paper.id;
+});
+
+scissors.addEventListener('click', function () {
+    console.log(scissors.id);
+    return scissors.id;
+});
+
 
 function playRound () {
-    let playerSelection = getPlayerSelection();
-    let result;
+    let playerSelection = getPlayerChoice();
     let computerSelection = getComputerChoice();
-    
 
     if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        result = 'win';
+        return 'win';
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        result = 'loss';
+        return'loss';
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        result = 'win';
+        return 'win';
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        result = 'loss';
+        return 'loss';
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        result = 'win';
+        return 'win';
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        result = 'loss';
+        return 'loss';
     } else if (playerSelection === computerSelection) {
-        result = 'draw';
+        return'draw';
     }
-    console.log('computer: ', computerSelection);
-    console.log('player', playerSelection);
-    return result;
 }
 
-console.log(playRound());
+//console.log(playRound());
