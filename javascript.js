@@ -16,67 +16,76 @@ function getComputerChoice() {
 let rock = document.getElementById('rock');
 let paper = document.getElementById('paper');
 let scissors = document.getElementById('scissors');
+let playerDisplay = document.getElementById('player');
+let computerDisplay = document.getElementById('computer');
 
+function playGame() {
 
     rock.addEventListener('click', function () {
-        let playerSelection = rock.id;
-        let computerSelection = getComputerChoice();
-        console.log('player: ', playerSelection);
-        console.log('comp: ', computerSelection);
+        if (playerScore < 5 && computerScore < 5) {
+            let playerSelection = rock.id;
+            let computerSelection = getComputerChoice();
 
-        if (playerSelection === 'rock' && computerSelection === 'scissors') {
-            playerScore += 1;
-            console.log('player: ', playerScore);
-            console.log('computer: ', computerScore);
-        } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-            computerScore += 1;
-            console.log('player: ', playerScore);
-            console.log('computer: ', computerScore);
-        } else if (playerSelection === computerSelection) {
-            console.log('draw');
-            console.log('player: ', playerScore);
-            console.log('computer: ', computerScore);
+            if (computerSelection === 'scissors') {
+                playerScore += 1;
+                playerDisplay.innerText = `Player Score - ${playerScore}`;
+                
+            } else if (computerSelection === 'paper') {
+                computerScore += 1;
+                computerDisplay.innerText = `Computer Score - ${computerScore}`;
+                
+            } else if (playerSelection === computerSelection) {
+                console.log('draw');
+            }
+
+        } else if (playerScore === 5) {
+            alert('win');
+        } else if (computerScore === 5) {
+            alert('lose');
         }
     });
 
     paper.addEventListener('click', function () {
-        let playerSelection = paper.id;
-        let computerSelection = getComputerChoice();
-
-        console.log('player: ', playerSelection);
-        console.log('comp: ', computerSelection);
-        if (playerSelection === 'paper' && computerSelection === 'rock') {
-            playerScore += 1;
-            console.log('player: ', playerScore);
-            console.log('computer: ', computerScore);
-        } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-            computerScore += 1;
-            console.log('player: ', playerScore);
-            console.log('computer: ', computerScore);
-        } else if (playerSelection === computerSelection) {
-            console.log('draw');
-            console.log('player: ', playerScore);
-            console.log('computer: ', computerScore);
+        if (playerScore < 5 && computerScore < 5) {
+            let playerSelection = paper.id;
+            let computerSelection = getComputerChoice();
+        
+            if (computerSelection === 'rock') {
+                playerScore += 1;
+                playerDisplay.innerText = `Player Score - ${playerScore}`;
+            } else if (computerSelection === 'scissors') {
+                computerScore += 1;
+                computerDisplay.innerText = `Computer Score - ${computerScore}`;
+            } else if (playerSelection === computerSelection) {
+                console.log('draw');   
+            }
+        } else if (playerScore === 5) {
+            alert('win');
+        } else if (computerScore === 5) {
+            alert('lose');
         }
     });
 
     scissors.addEventListener('click', function () {
-        let playerSelection = scissors.id;
-        let computerSelection = getComputerChoice();
-        console.log('player: ', playerSelection);
-        console.log('comp: ', computerSelection);
+        if (playerScore < 5 && computerScore < 5) {
+            let playerSelection = scissors.id;
+            let computerSelection = getComputerChoice();
 
-        if (playerSelection === 'scissors' && computerSelection === 'paper') {
-            playerScore += 1;
-            console.log('player: ', playerScore);
-            console.log('computer: ', computerScore);
-        } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-            computerScore += 1;
-            console.log('player: ', playerScore);
-            console.log('computer: ', computerScore);
-        } else if (playerSelection === computerSelection) {
-            console.log('draw');
-            console.log('player: ', playerScore);
-            console.log('computer: ', computerScore);
+            if (computerSelection === 'paper') {
+                playerScore += 1;
+                playerDisplay.innerText = `Player Score - ${playerScore}`;
+            } else if (computerSelection === 'rock') {
+                computerScore += 1;
+                computerDisplay.innerText = `Computer Score - ${computerScore}`;
+            } else if (playerSelection === computerSelection) {
+                console.log('draw');
+            }
+        } else if (playerScore === 5) {
+            alert('win');
+        } else if (computerScore === 5) {
+            alert('lose');
         }
     });
+}
+
+playGame();
