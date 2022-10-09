@@ -21,51 +21,62 @@ let scissors = document.getElementById('scissors');
     rock.addEventListener('click', function () {
         let playerSelection = rock.id;
         let computerSelection = getComputerChoice();
-        //console.log('player: ', playerSelection);
-        //console.log('comp: ', computerSelection);
+        console.log('player: ', playerSelection);
+        console.log('comp: ', computerSelection);
+
         if (playerSelection === 'rock' && computerSelection === 'scissors') {
-            console.log ('win');
-            return 'win';
+            playerScore += 1;
+            console.log('player: ', playerScore);
+            console.log('computer: ', computerScore);
         } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-            console.log('loss');
-            return 'loss';
+            computerScore += 1;
+            console.log('player: ', playerScore);
+            console.log('computer: ', computerScore);
         } else if (playerSelection === computerSelection) {
             console.log('draw');
-            return 'draw';
+            console.log('player: ', playerScore);
+            console.log('computer: ', computerScore);
         }
     });
 
     paper.addEventListener('click', function () {
         let playerSelection = paper.id;
         let computerSelection = getComputerChoice();
-        //console.log('player: ', playerSelection);
-        //console.log('comp: ', computerSelection);
+
+        console.log('player: ', playerSelection);
+        console.log('comp: ', computerSelection);
         if (playerSelection === 'paper' && computerSelection === 'rock') {
-            //console.log ('win');
-            return 'win';
+            playerScore += 1;
+            console.log('player: ', playerScore);
+            console.log('computer: ', computerScore);
         } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-            //console.log('loss');
-            return 'loss';
+            computerScore += 1;
+            console.log('player: ', playerScore);
+            console.log('computer: ', computerScore);
         } else if (playerSelection === computerSelection) {
-            //console.log('draw');
-            return 'draw';
+            console.log('draw');
+            console.log('player: ', playerScore);
+            console.log('computer: ', computerScore);
         }
     });
 
     scissors.addEventListener('click', function () {
-        //console.log(scissors.id);
         let playerSelection = scissors.id;
         let computerSelection = getComputerChoice();
-        //console.log('player: ', playerSelection);
-        //console.log('comp: ', computerSelection);
+        console.log('player: ', playerSelection);
+        console.log('comp: ', computerSelection);
+
         if (playerSelection === 'scissors' && computerSelection === 'paper') {
-            //console.log ('win');
-            return 'win';
+            playerScore += 1;
+            console.log('player: ', playerScore);
+            console.log('computer: ', computerScore);
         } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-            //console.log('loss');
-            return 'loss';
+            computerScore += 1;
+            console.log('player: ', playerScore);
+            console.log('computer: ', computerScore);
         } else if (playerSelection === computerSelection) {
-            //console.log('draw');
-            return 'draw';
+            console.log('draw');
+            console.log('player: ', playerScore);
+            console.log('computer: ', computerScore);
         }
     });
