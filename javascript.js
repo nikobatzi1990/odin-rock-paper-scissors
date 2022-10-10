@@ -40,6 +40,9 @@ function playGame() {
             let playerSelection = rock.id;
             let computerSelection = getComputerChoice();
 
+            youChose.innerText = `Player Choice : ${playerSelection}`;
+            compChose.innerText = `Computer Choice : ${computerSelection}`;
+
             if (computerSelection === 'scissors') {
                 playerScore += 1;
                 playerDisplay.innerText = `Player Score - ${playerScore}`;
@@ -63,6 +66,10 @@ function playGame() {
         if (playerScore < 5 && computerScore < 5) {
             let playerSelection = paper.id;
             let computerSelection = getComputerChoice();
+
+            youChose.innerText = `Player Choice : ${playerSelection}`;
+            compChose.innerText = `Computer Choice : ${computerSelection}`;
+
         
             if (computerSelection === 'rock') {
                 playerScore += 1;
@@ -84,6 +91,10 @@ function playGame() {
         if (playerScore < 5 && computerScore < 5) {
             let playerSelection = scissors.id;
             let computerSelection = getComputerChoice();
+
+            youChose.innerText = `Player Choice : ${playerSelection}`;
+            compChose.innerText = `Computer Choice : ${computerSelection}`;
+
 
             if (computerSelection === 'paper') {
                 playerScore += 1;
