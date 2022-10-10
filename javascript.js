@@ -9,12 +9,6 @@ let computerDisplay = document.getElementById('computer');
 let youChose = document.getElementById('player-choice');
 let compChose = document.getElementById('comp-choice');
 
-// Events
-
-rock.addEventListener('click', playRound());
-paper.addEventListener('click', playRound());
-scissors.addEventListener('click', playRound());
-
 // Game result pop-ups
 
 let winPopup = document.createElement('div');
@@ -42,7 +36,7 @@ function getComputerChoice() {
 function playRound() {
 
     if (playerScore < 5 && computerScore < 5) {
-        let playerSelection;
+
         let computerSelection = getComputerChoice();
 
         youChose.innerText = `Player Choice : ${playerSelection}`;
@@ -89,10 +83,27 @@ function playRound() {
             } else if (playerSelection === computerSelection) {
                 console.log('draw');
             }
-        } else if (playerScore === 5) {
-            document.body.appendChild(winPopup);
-        } else if (computerScore === 5) {
-            document.body.appendChild(losePopup);
         }
+    } else if (playerScore === 5) {
+        document.body.appendChild(winPopup);
+    } else if (computerScore === 5) {
+        document.body.appendChild(losePopup);
     }
 }
+
+// Events
+
+rock.addEventListener('click', function () {
+    playerSelection = 'rock';
+    playRound();
+});
+
+paper.addEventListener('click', function () {
+    playerSelection = 'paper';
+    playRound();
+});
+
+scissors.addEventListener('click', function () {
+    playerSelection = 'scissors';
+    playRound();
+});
