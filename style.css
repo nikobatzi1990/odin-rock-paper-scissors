@@ -5,6 +5,11 @@ body {
     gap: 10px;
 }
 
+@font-face {
+    font-family: "Glamper";
+    src: url("/Users/nicoleboci/Desktop/odin-project/repos/odin-rock-paper-scissors/Glamper-Regular.otf");
+}
+
 #header {
     font-size: 60px;
     font-family: 'Glamper', sans-serif;
