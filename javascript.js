@@ -35,75 +35,83 @@ function getComputerChoice() {
 
 function playRound() {
 
-    if (playerScore < 5 && computerScore < 5) {
+    let computerSelection = getComputerChoice();
 
-        let computerSelection = getComputerChoice();
+    youChose.innerText = `Player Choice : ${playerSelection}`;
+    compChose.innerText = `Computer Choice : ${computerSelection}`;
 
-        youChose.innerText = `Player Choice : ${playerSelection}`;
-        compChose.innerText = `Computer Choice : ${computerSelection}`;
+    if (playerSelection === computerSelection) {
+        console.log('draw');
 
-        if (playerSelection === 'rock') {
+    } else if (playerSelection === 'rock') {
 
-            if (computerSelection === 'scissors') {
-                playerScore += 1;
-                playerDisplay.innerText = `Player Score - ${playerScore}`;
-                
-            } else if (computerSelection === 'paper') {
-                computerScore += 1;
-                computerDisplay.innerText = `Computer Score - ${computerScore}`;
-                
-            } else if (playerSelection === computerSelection) {
-                console.log('draw');
-            }
-    
-        } else if (playerSelection === 'paper') {
-
-            if (computerSelection === 'rock') {
-                playerScore += 1;
-                playerDisplay.innerText = `Player Score - ${playerScore}`;
-
-            } else if (computerSelection === 'scissors') {
-                computerScore += 1;
-                computerDisplay.innerText = `Computer Score - ${computerScore}`;
-
-            } else if (playerSelection === computerSelection) {
-                console.log('draw');   
-            }
-
-        } else if (playerSelection === 'scissors') {
-
-            if (computerSelection === 'paper') {
-                playerScore += 1;
-                playerDisplay.innerText = `Player Score - ${playerScore}`;
-            
-            } else if (computerSelection === 'rock') {
-                computerScore += 1;
-                computerDisplay.innerText = `Computer Score - ${computerScore}`;
-            
-            } else if (playerSelection === computerSelection) {
-                console.log('draw');
-            }
+        if (computerSelection === 'scissors') {
+            playerScore += 1;
+            playerDisplay.innerText = `Player Score - ${playerScore}`;
+                    
+        } else if (computerSelection === 'paper') {
+            computerScore += 1;
+            computerDisplay.innerText = `Computer Score - ${computerScore}`;
+                    
         }
-    } else if (playerScore === 5) {
-        document.body.appendChild(winPopup);
-    } else if (computerScore === 5) {
-        document.body.appendChild(losePopup);
+        
+    } else if (playerSelection === 'paper') {
+
+        if (computerSelection === 'rock') {
+            playerScore += 1;
+            playerDisplay.innerText = `Player Score - ${playerScore}`;
+
+        } else if (computerSelection === 'scissors') {
+            computerScore += 1;
+            computerDisplay.innerText = `Computer Score - ${computerScore}`;
+
+        }
+
+    } else if (playerSelection === 'scissors') {
+
+        if (computerSelection === 'paper') {
+            playerScore += 1;
+            playerDisplay.innerText = `Player Score - ${playerScore}`;
+                
+        } else if (computerSelection === 'rock') {
+            computerScore += 1;
+            computerDisplay.innerText = `Computer Score - ${computerScore}`;
+        }
     }
 }
 
 // Events
 
 rock.addEventListener('click', function () {
-    playerSelection = 'rock';
-    playRound();
+    if (playerScore < 5 && computerScore < 5) {
+        playerSelection = 'rock';
+        playRound();
+    } else if (playerScore === 5) {
+        document.body.appendChild(winPopup);
+    } else if (computerScore === 5) {
+        document.body.appendChild(losePopup);
+    }
 });
 
 paper.addEventListener('click', function () {
-    playerSelection = 'paper';
-    playRound();
+    if (playerScore < 5 && computerScore < 5) {
+        playerSelection = 'paper';
+        playRound();  
+    } else if (playerScore === 5) {
+        document.body.appendChild(winPopup);
+    } else if (computerScore === 5) {
+        document.body.appendChild(losePopup);
+    }
 });
 
 scissors.addEventListener('click', function () {
-    playerSelection = 'scissors';
-    playRound();
+    if (playerScore < 5 && computerScore < 5) {
+        playerSelection = 'scissors';
+        playRound();
+    } else if (playerScore === 5) {
+        document.body.appendChild(winPopup);
+    } else if (computerScore === 5) {
+        document.body.appendChild(losePopup);
+    }
 });
+
