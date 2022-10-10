@@ -92,7 +92,7 @@ function playRound() {
 
 rock.addEventListener('click', function () {
     if (playerScore < 5 && computerScore < 5) {
-        playerSelection = 'paper';
+        playerSelection = 'rock';
         playRound();  
     }
     checkForWinner();
