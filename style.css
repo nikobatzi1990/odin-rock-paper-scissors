@@ -6,8 +6,8 @@ body {
 }
 
 #header {
-    font-size: 80px;
-    font-family: 'Glamper';
+    font-size: 60px;
+    font-family: 'Glamper', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +17,7 @@ body {
 
 .subheader {
     font-size: 30px;
-    font-family: 'Glamper';
+    font-family: 'Glamper', sans-serif;
 }
 
 p {
@@ -95,7 +95,7 @@ img {
     padding: 10px;
     background-color: #FFC300;
     font-size: 50px;
-    font-family: 'Glamper';
+    font-family: 'Glamper', sans-serif;
     border: 2px solid #FFC300;
     box-shadow: -3px 3px #FF5733, -2px 2px #FF5733, -1px 1px #FF5733;
     border-radius: 10px;
