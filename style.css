@@ -7,7 +7,9 @@ body {
 
 @font-face {
     font-family: "Glamper";
-    src: url("/Users/nicoleboci/Desktop/odin-project/repos/odin-rock-paper-scissors/Glamper-Regular.otf");
+    src: url("/Users/nicoleboci/Desktop/odin-project/repos/odin-rock-paper-scissors/Glamper-Regular.otf"),
+    format("otf"), local("Glamper-Regular.otf"),
+    format("otf");
 }
 
 #header {
