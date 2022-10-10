@@ -6,6 +6,8 @@ let paper = document.getElementById('paper');
 let scissors = document.getElementById('scissors');
 let playerDisplay = document.getElementById('player');
 let computerDisplay = document.getElementById('computer');
+let youChose = document.getElementById('player-choice');
+let compChose = document.getElementById('comp-choice');
 
 // Game result pop-ups
 
@@ -16,6 +18,8 @@ winPopup.innerText = 'You win!';
 let losePopup = document.createElement('div');
 losePopup.classList.add('popup');
 losePopup.innerText = 'You lose!'
+
+// Game Functions
 
 function getComputerChoice() {
     let random = Math.floor(Math.random() * 3 + 1);
@@ -28,8 +32,6 @@ function getComputerChoice() {
         return "scissors";
     }
 }
-
-// Functions
 
 function playGame() {
 

@@ -45,6 +45,33 @@ img {
     width: 100px;
 }
 
+#choices {
+    display: flex;
+    justify-content: center;
+}
+
+#player-choice {
+    margin: 15px;
+    padding: 10px;
+    background-color: #FFC300;
+    font-size: 50px;
+    font-family: 'Glamper', sans-serif;
+    border: 2px solid #FFC300;
+    box-shadow: -3px 3px #FF5733, -2px 2px #FF5733, -1px 1px #FF5733;
+    border-radius: 10px;
+}
+
+#comp-choice {
+    margin: 15px;
+    padding: 10px;
+    background-color: #FFC300;
+    font-size: 50px;
+    font-family: 'Glamper', sans-serif;
+    border: 2px solid #FFC300;
+    box-shadow: -3px 3px #FF5733, -2px 2px #FF5733, -1px 1px #FF5733;
+    border-radius: 10px;
+}
+
 #scoreboard {
     margin: 10px;
     display: flex;
@@ -57,7 +84,7 @@ img {
     padding: 10px;
     background-color: #FFC300;
     font-size: 50px;
-    font-family: 'Glamper';
+    font-family: 'Glamper', sans-serif;
     border: 2px solid #FFC300;
     box-shadow: -3px 3px #FF5733, -2px 2px #FF5733, -1px 1px #FF5733;
     border-radius: 10px;
