@@ -33,6 +33,14 @@ function getComputerChoice() {
     }
 }
 
+function checkForWinner() {
+    if (playerScore === 5) {
+        document.body.appendChild(winPopup);
+    } else if (computerScore === 5) {
+        document.body.appendChild(losePopup);
+    }
+}
+
 function playRound() {
 
     let computerSelection = getComputerChoice();
@@ -84,34 +92,25 @@ function playRound() {
 
 rock.addEventListener('click', function () {
     if (playerScore < 5 && computerScore < 5) {
-        playerSelection = 'rock';
-        playRound();
-    } else if (playerScore === 5) {
-        document.body.appendChild(winPopup);
-    } else if (computerScore === 5) {
-        document.body.appendChild(losePopup);
+        playerSelection = 'paper';
+        playRound();  
     }
+    checkForWinner();
 });
 
 paper.addEventListener('click', function () {
     if (playerScore < 5 && computerScore < 5) {
         playerSelection = 'paper';
         playRound();  
-    } else if (playerScore === 5) {
-        document.body.appendChild(winPopup);
-    } else if (computerScore === 5) {
-        document.body.appendChild(losePopup);
     }
+    checkForWinner();
 });
 
 scissors.addEventListener('click', function () {
     if (playerScore < 5 && computerScore < 5) {
         playerSelection = 'scissors';
         playRound();
-    } else if (playerScore === 5) {
-        document.body.appendChild(winPopup);
-    } else if (computerScore === 5) {
-        document.body.appendChild(losePopup);
     }
+    checkForWinner();
 });
 
